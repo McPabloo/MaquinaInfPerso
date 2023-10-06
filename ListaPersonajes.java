@@ -28,12 +28,39 @@ public class ListaPersonajes {
         personajes.add(new Personaje("Chicharito", "Masculino", "Real", "Deportes"));
         personajes.add(new Personaje("Checo Perez", "Masculino", "Real", "Deportes"));
         personajes.add(new Personaje("Spiderman", "Masculino", "Ficticio", "Series y Peliculas"));
-        personajes.add(new Personaje("Juan Escutia", "Masculino", "Real", "Histora"));
+        personajes.add(new Personaje("Juan Escutia", "Masculino", "Real", "Historia"));
         personajes.add(new Personaje("Mama Coco", "Femenino", "Ficticio", "Series y Peliculas"));
-
+        personajes.add(new Personaje("Luis Miguel", "Masculino", "Real", "Artista"));
+        personajes.add(new Personaje("Wario", "Masculino", "Ficticio", "Videojuegos"));
+        personajes.add(new Personaje("Seita", "Masculino", "Ficticio", "Series y Peliculas"));
+        personajes.add(new Personaje("Mulan", "Femenino", "Ficticio", "Series y Peliculas"));
+        personajes.add(new Personaje("Andy", "Masculino", "Ficticio", "Series y Peliculas"));
+        personajes.add(new Personaje("La Mole", "Masculino", "Real", "Artista"));
+        personajes.add(new Personaje("Dr. Strange", "Masculino", "Ficticio", "Series y Peliculas"));
+        personajes.add(new Personaje("Patricio Estrella", "Masculino", "Ficticio", "Series y Peliculas"));
+        personajes.add(new Personaje("Come Galletas", "Masculino", "Ficticio", "Series y Peliculas"));
+        personajes.add(new Personaje("Etzio", "Masculino", "Ficticio", "Videojuegos"));
+        personajes.add(new Personaje("Junior H", "Masculino", "Real", "Artista"));
+        personajes.add(new Personaje("Sonic", "Masculino", "Ficticio", "Videojuegos"));
+        personajes.add(new Personaje("Naruto", "Masculino", "Ficticio", "Series y Peliculas"));
+        personajes.add(new Personaje("Cosmo", "Masculino", "Ficticio", "Series y Peliculas"));
+        personajes.add(new Personaje("Bambi", "Masculino", "Ficticio", "Series y Peliculas"));
+        personajes.add(new Personaje("Lucy", "Femenino", "Ficticio", "Series y Peliculas"));
+        personajes.add(new Personaje("Dinosaurio de Google", "Masculino", "Ficticio", "Videojuegos"));
+        personajes.add(new Personaje("Cheems", "Masculino", "Real", "Artista"));
+        personajes.add(new Personaje("Franco Escamilla", "Masculino", "Real", "Artista"));
+        personajes.add(new Personaje("Luffy", "Masculino", "Ficticio", "Series y Peliculas"));
+        personajes.add(new Personaje("Mr. Beats", "Masculino", "Real", "Artista"));
+        personajes.add(new Personaje("AMLO", "Masculino", "Real", "Politico"));
+        personajes.add(new Personaje("Mario", "Masculino", "Ficticio", "Videojuegos"));
+        personajes.add(new Personaje("Napoleon", "Masculino", "Real", "Historia"));
+        personajes.add(new Personaje("Hittler", "Masculino", "Real", "Historia"));
+        personajes.add(new Personaje("Goku", "Masculino", "Ficticio", "Series y Peliculas"));
+        personajes.add(new Personaje("Leonel Messi", "Masculino", "Real", "Deportes"));
 
         for (Personaje personaje : personajes) {
-            System.out.println(personaje);
+            if(personaje.getGenero() == "Femenino" && personaje.getTipo() == "Real")
+                System.out.println(personaje);
         }
     }
 }
