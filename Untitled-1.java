@@ -50,3 +50,5 @@
         personajes.add(new Personaje("Goku", "Masculino", "Ficticio", "Series y Peliculas", null, null, null, "Anime"));
         personajes.add(new Personaje("Leonel Messi", "Masculino", "Real", "Deportes", "Futbol", null, null, null));        
 
+
+        TIPO DE ENTRETENIMIENTO Y TIPO DE ARTISTA

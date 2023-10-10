@@ -61,8 +61,6 @@ public class JuegoAdivinanza {
         personajes.add(new Personaje("Goku", "Masculino", "Ficticio", "Series y Peliculas", null, null, null, "Anime"));
         personajes.add(new Personaje("Leonel Messi", "Masculino", "Real", "Deportes", "Futbol", null, null, null));        
 
-
-
         scanner = new Scanner(System.in);
     }
 
@@ -108,12 +106,54 @@ public class JuegoAdivinanza {
         if (!personajesRestantes.isEmpty() && !realizarPregunta("¿Tu personaje es de videojuegos?")) {
             if (!realizarPregunta("¿Tu personaje es de series o películas?")) {
                 if (!realizarPregunta("¿Tu personaje es de deportes?")) {
-                    // Si el usuario respondió "no" a todas las preguntas anteriores,
-                    // aquí puedes agregar otra pregunta.
+                    if (!realizarPregunta("¿Tu personaje es un artista?")) {
+                            if (!realizarPregunta("¿Tu personaje es la imagen de una marca?")) {
+                                if (!realizarPregunta("¿Tu personaje es Histórico?")) {
+                                    if (!realizarPregunta("¿Tu personaje es Mitológico?")) {
+                                        System.out.println("No me lo sé jaja");
+                                    } else {
+                                        personajesRestantes = filtrarPersonajes(personajesRestantes, "Mitología", true, false);
+                                        for (Personaje personaje : personajesRestantes) {
+                                            System.out.println(personaje.getNombre());
+                                        }
+                                    }
+                                } else {
+                                    personajesRestantes = filtrarPersonajes(personajesRestantes, "Historia", true, false);
+                                    for (Personaje personaje : personajesRestantes) {
+                                        System.out.println(personaje.getNombre());
+                                    }
+                                }
+                            } else {
+                                personajesRestantes = filtrarPersonajes(personajesRestantes, "Marca", true, false);
+                                for (Personaje personaje : personajesRestantes) {
+                                    System.out.println(personaje.getNombre());
+                                }
+                            }
+                    } else {
+                        personajesRestantes = filtrarPersonajes(personajesRestantes, "Artista", true, false);
+                        for (Personaje personaje : personajesRestantes) {
+                            System.out.println(personaje.getNombre());
+                        }
+                    }
                 } else {
                     personajesRestantes = filtrarPersonajes(personajesRestantes, "Deportes", true, false);
                     for (Personaje personaje : personajesRestantes) {
                         System.out.println(personaje.getNombre());
+                    }
+                    if (!realizarPregunta("¿Tu personaje juega Futbol?")) {
+                        if (!realizarPregunta("¿Tu personaje corre carreras?")) {
+                            System.out.println("No puedo adivinar:(");
+                        } else {
+                            personajesRestantes = filtrarPersonajes(personajesRestantes, "Carreras", true, false);
+                            for (Personaje personaje : personajesRestantes) {
+                                System.out.println(personaje.getNombre());
+                            }
+                        }
+                    } else {
+                        personajesRestantes = filtrarPersonajes(personajesRestantes, "Futbol", true, false);
+                        for (Personaje personaje : personajesRestantes) {
+                            System.out.println(personaje.getNombre());
+                        }
                     }
                 }
             } else {
@@ -127,17 +167,59 @@ public class JuegoAdivinanza {
             for (Personaje personaje : personajesRestantes) {
                 System.out.println(personaje.getNombre());
             }
+                    if (!realizarPregunta("¿Tu personaje es de la Marca Nintendo?")) {
+                         //En caso de responder "no", pregunta otra cosa
+                        if (!realizarPregunta("¿Tu personaje es de la Marca Play Station?")) {
+                             //En caso de responder "no", pregunta otra cosa
+                            if (!realizarPregunta("¿Tu personaje es de Comida?")) {
+                                 //En caso de responder "no", pregunta otra cosa
+                                if (!realizarPregunta("¿Tu personaje es de un Farmacia?")) {
+                                     //En caso de responder "no", pregunta otra cosa
+                                    if (!realizarPregunta("¿Tu personaje es de la Marca Sega?")) {
+                                        System.out.println("No puedo adivinar:(");
+                                    } else {
+                                        personajesRestantes = filtrarPersonajes(personajesRestantes, "Sega", true, false);
+                                        for (Personaje personaje : personajesRestantes) {
+                                            System.out.println(personaje.getNombre());
+                                        }
+                                    }
+                                } else {
+                                    personajesRestantes = filtrarPersonajes(personajesRestantes, "Farmacia", true, false);
+                                    for (Personaje personaje : personajesRestantes) {
+                                        System.out.println(personaje.getNombre());
+                                    }
+                                }
+                            } else {
+                                personajesRestantes = filtrarPersonajes(personajesRestantes, "Comida", true, false);
+                                for (Personaje personaje : personajesRestantes) {
+                                    System.out.println(personaje.getNombre());
+                                }
+                            }
+                        } else {
+                            personajesRestantes = filtrarPersonajes(personajesRestantes, "Play Station", true, false);
+                            for (Personaje personaje : personajesRestantes) {
+                                System.out.println(personaje.getNombre());
+                            }
+                        }
+                    } else {
+                        personajesRestantes = filtrarPersonajes(personajesRestantes, "Nintendo", true, false);
+                        for (Personaje personaje : personajesRestantes) {
+                            System.out.println(personaje.getNombre());
+                        }
+                    }
         }
-    
+        
         /* 
         if (personajesRestantes.isEmpty()) {
             System.out.println("No puedo adivinar tu personaje. ¡Has ganado!");
-        } else {
+        } else if (personajesRestantes.size() == 1) {
             Personaje personajeAdivinado = personajesRestantes.get(new Random().nextInt(personajesRestantes.size()));
             System.out.println("¡Adiviné! Tu personaje es:");
             System.out.println(personajeAdivinado);
-        }
+        } 
         */
+        
+        
 
     }    
 
@@ -183,17 +265,93 @@ public class JuegoAdivinanza {
                 } 
             }
 
+            // Agregar filtrado para el atributo "Historia" si adivinar es true:
+            if (atributo.equals("Historia")) {
+                if (valor && personaje.getDescripcion().equalsIgnoreCase("Historia")) {
+                    personajesFiltrados.add(personaje);
+                } 
+            }
+
+            // Agregar filtrado para el atributo "Mitología" si adivinar es true:
+            if (atributo.equals("Mitología")) {
+                if (valor && personaje.getDescripcion().equalsIgnoreCase("Mitología")) {
+                    personajesFiltrados.add(personaje);
+                } 
+            }
+
+            // Agregar filtrado para el atributo "Marca" si adivinar es true:
+            if (atributo.equals("Marca")) {
+                if (valor && personaje.getDescripcion().equalsIgnoreCase("Marca")) {
+                    personajesFiltrados.add(personaje);
+                } 
+            }
+
             // Agregar filtrado para el atributo "Deportes" si adivinar es true:
             if (atributo.equals("Deportes")) {
                 if (valor && personaje.getDescripcion().equalsIgnoreCase("Deportes")) {
                     personajesFiltrados.add(personaje);
                 } 
             }
+
+             // Agregar filtrado para el atributo "Artista" si adivinar es true:
+            if (atributo.equals("Artista")) {
+                if (valor && personaje.getDescripcion().equalsIgnoreCase("Artista")) {
+                    personajesFiltrados.add(personaje);
+                } 
+            }
+
+            // Agregar filtrado para el atributo "Nintendo" si adivinar es true:
+            if (atributo.equals("Nintendo")) {
+                if (valor && personaje.getMarca().equalsIgnoreCase("Nintendo")) {
+                    personajesFiltrados.add(personaje);
+                } 
+            }
+
+            // Agregar filtrado para el atributo "Nintendo" si adivinar es true:
+            if (atributo.equals("Play Station")) {
+                if (valor && personaje.getMarca().equalsIgnoreCase("Play Station")) {
+                    personajesFiltrados.add(personaje);
+                } 
+            }
+
+            // Agregar filtrado para el atributo "Nintendo" si adivinar es true:
+            if (atributo.equals("Comida")) {
+                if (valor && personaje.getMarca().equalsIgnoreCase("Comida")) {
+                    personajesFiltrados.add(personaje);
+                } 
+            }
+
+            // Agregar filtrado para el atributo "Nintendo" si adivinar es true:
+            if (atributo.equals("Farmacia")) {
+                if (valor && personaje.getMarca().equalsIgnoreCase("Farmacia")) {
+                    personajesFiltrados.add(personaje);
+                } 
+            }
+
+            // Agregar filtrado para el atributo "Nintendo" si adivinar es true:
+            if (atributo.equals("Sega")) {
+                if (valor && personaje.getMarca().equalsIgnoreCase("Sega")) {
+                    personajesFiltrados.add(personaje);
+                } 
+            }
+
+            // Agregar filtrado para el atributo "Futbol" si adivinar es true:
+            if (atributo.equals("Futbol")) {
+                if (valor && personaje.getDeporte().equalsIgnoreCase("Futbol")) {
+                    personajesFiltrados.add(personaje);
+                } 
+            }
+
+            // Agregar filtrado para el atributo "Carreras" si adivinar es true:
+            if (atributo.equals("Carreras")) {
+                if (valor && personaje.getDeporte().equalsIgnoreCase("Carreras")) {
+                    personajesFiltrados.add(personaje);
+                } 
+            }
+            
         }
     
         return personajesFiltrados;
     }
-    
-    
+   
 }
-
