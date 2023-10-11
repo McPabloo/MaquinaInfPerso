@@ -281,7 +281,23 @@ public class JuegoAdivinanza {
             Personaje personajeAdivinado = personajesRestantes.get(new Random().nextInt(personajesRestantes.size()));
             System.out.println("¡Adiviné! Tu personaje es:");
             System.out.println(personajeAdivinado.getNombre());
-        } 
+        } else if (personajesRestantes.size() >= 1) {
+            boolean adivinado = false;
+        
+            do {
+                Personaje personajeAdivinado = personajesRestantes.get(new Random().nextInt(personajesRestantes.size()));
+                System.out.println("¿Tu personaje es " + personajeAdivinado.getNombre() + "? (si/no)");
+                String respuesta = scanner.nextLine();
+        
+                if (respuesta.equalsIgnoreCase("si")) {
+                    System.out.println("¡Adiviné! Tu personaje es " + personajeAdivinado.getNombre());
+                    adivinado = true;
+                } else {
+                    personajesRestantes.remove(personajeAdivinado);
+                }
+            } while (!adivinado && !personajesRestantes.isEmpty());
+        }
+        
         
         
         
