@@ -79,27 +79,19 @@ public class JuegoAdivinanza {
         // Primera pregunta
         if (!realizarPregunta("¿Tu personaje es masculino?")) {
             personajesRestantes = filtrarPersonajes(personajesRestantes, "Masculino", false, false);
-            for (Personaje personaje : personajesRestantes) {
-                System.out.println(personaje.getNombre());
-            }
+            
         } else {
             personajesRestantes = filtrarPersonajes(personajesRestantes, "Masculino", true, false);
-            for (Personaje personaje : personajesRestantes) {
-                System.out.println(personaje.getNombre());
-            }
+            
         }
     
         // Segunda pregunta
         if (!personajesRestantes.isEmpty() && !realizarPregunta("¿Tu personaje es real?")) {
             personajesRestantes = filtrarPersonajes(personajesRestantes, "Real", false, false);
-            for (Personaje personaje : personajesRestantes) {
-                System.out.println(personaje.getNombre());
-            }
+            
         } else if (!personajesRestantes.isEmpty()) {
             personajesRestantes = filtrarPersonajes(personajesRestantes, "Real", true, false);
-            for (Personaje personaje : personajesRestantes) {
-                System.out.println(personaje.getNombre());
-            }
+            
         }
     
         // Tercera pregunta
@@ -113,27 +105,19 @@ public class JuegoAdivinanza {
                                         System.out.println("No me lo sé jaja");
                                     } else {
                                         personajesRestantes = filtrarPersonajes(personajesRestantes, "Mitología", true, false);
-                                        for (Personaje personaje : personajesRestantes) {
-                                            System.out.println(personaje.getNombre());
-                                        }
+                                        
                                     }
                                 } else {
                                     personajesRestantes = filtrarPersonajes(personajesRestantes, "Historia", true, false);
-                                    for (Personaje personaje : personajesRestantes) {
-                                        System.out.println(personaje.getNombre());
-                                    }
+                                    
                                 }
                             } else {
                                 personajesRestantes = filtrarPersonajes(personajesRestantes, "Marca", true, false);
-                                for (Personaje personaje : personajesRestantes) {
-                                    System.out.println(personaje.getNombre());
-                                }
+                                
                             }
                     } else {
                         personajesRestantes = filtrarPersonajes(personajesRestantes, "Artista", true, false);
-                        for (Personaje personaje : personajesRestantes) {
-                            System.out.println(personaje.getNombre());
-                        }
+                        
                         if (!realizarPregunta("¿Tu personaje es de Cantante?")) {
                             if (!realizarPregunta("¿Tu personaje es Comediante?")) {
                                 if (!realizarPregunta("¿Tu personaje es Pintor?")) {
@@ -141,55 +125,39 @@ public class JuegoAdivinanza {
                                         System.out.println("No puedo adivinar:(");
                                     } else {
                                         personajesRestantes = filtrarPersonajes(personajesRestantes, "Productor", true, false);
-                                        for (Personaje personaje : personajesRestantes) {
-                                            System.out.println(personaje.getNombre());
-                                        }
+                                        
                                     }
                                 } else {
                                     personajesRestantes = filtrarPersonajes(personajesRestantes, "Pintor", true, false);
-                                    for (Personaje personaje : personajesRestantes) {
-                                        System.out.println(personaje.getNombre());
-                                    }
+                                    
                                 }
                             } else {
                                 personajesRestantes = filtrarPersonajes(personajesRestantes, "Comediante", true, false);
-                                for (Personaje personaje : personajesRestantes) {
-                                    System.out.println(personaje.getNombre());
-                                }
+                                
                             }
                         } else {
                             personajesRestantes = filtrarPersonajes(personajesRestantes, "Cantante", true, false);
-                            for (Personaje personaje : personajesRestantes) {
-                                System.out.println(personaje.getNombre());
-                            }
+                            
                         }
                     }
                 } else {
                     personajesRestantes = filtrarPersonajes(personajesRestantes, "Deportes", true, false);
-                    for (Personaje personaje : personajesRestantes) {
-                        System.out.println(personaje.getNombre());
-                    }
+                    
                     if (!realizarPregunta("¿Tu personaje juega Futbol?")) {
                         if (!realizarPregunta("¿Tu personaje corre carreras?")) {
                             System.out.println("No puedo adivinar:(");
                         } else {
                             personajesRestantes = filtrarPersonajes(personajesRestantes, "Carreras", true, false);
-                            for (Personaje personaje : personajesRestantes) {
-                                System.out.println(personaje.getNombre());
-                            }
+                            
                         }
                     } else {
                         personajesRestantes = filtrarPersonajes(personajesRestantes, "Futbol", true, false);
-                        for (Personaje personaje : personajesRestantes) {
-                            System.out.println(personaje.getNombre());
-                        }
+                        
                     }
                 }
             } else {
                 personajesRestantes = filtrarPersonajes(personajesRestantes, "Series y Peliculas", true, false);
-                for (Personaje personaje : personajesRestantes) {
-                    System.out.println(personaje.getNombre());
-                }
+                
                 if (!realizarPregunta("¿Tu personaje es de Anime?")) {
                     if (!realizarPregunta("¿Tu personaje es de Animación?")) {
                         if (!realizarPregunta("¿Tu personaje es de Caricaturas?")) {
@@ -198,40 +166,28 @@ public class JuegoAdivinanza {
                                     System.out.println("No puedo adivinar:(");
                                 } else {
                                     personajesRestantes = filtrarPersonajes(personajesRestantes, "Superhéroe", true, false);
-                                    for (Personaje personaje : personajesRestantes) {
-                                        System.out.println(personaje.getNombre());
-                                    }
+                                    
                                 }
                             } else {
                                 personajesRestantes = filtrarPersonajes(personajesRestantes, "Luchador", true, false);
-                                for (Personaje personaje : personajesRestantes) {
-                                    System.out.println(personaje.getNombre());
-                                }
+                                
                             }
                         } else {
                             personajesRestantes = filtrarPersonajes(personajesRestantes, "Caricaturas", true, false);
-                            for (Personaje personaje : personajesRestantes) {
-                                System.out.println(personaje.getNombre());
-                            }
+                            
                         }
                     } else {
                         personajesRestantes = filtrarPersonajes(personajesRestantes, "Animación", true, false);
-                        for (Personaje personaje : personajesRestantes) {
-                            System.out.println(personaje.getNombre());
-                        }
+                        
                     }
                 } else {
                     personajesRestantes = filtrarPersonajes(personajesRestantes, "Anime", true, false);
-                    for (Personaje personaje : personajesRestantes) {
-                        System.out.println(personaje.getNombre());
-                    }
+                    
                 }
             }
         } else if (!personajesRestantes.isEmpty()) {
             personajesRestantes = filtrarPersonajes(personajesRestantes, "Videojuegos", true, false);
-            for (Personaje personaje : personajesRestantes) {
-                System.out.println(personaje.getNombre());
-            }
+            
                     if (!realizarPregunta("¿Tu personaje es de la Marca Nintendo?")) {
                          //En caso de responder "no", pregunta otra cosa
                         if (!realizarPregunta("¿Tu personaje es de la Marca Play Station?")) {
@@ -244,33 +200,23 @@ public class JuegoAdivinanza {
                                         System.out.println("No puedo adivinar:(");
                                     } else {
                                         personajesRestantes = filtrarPersonajes(personajesRestantes, "Sega", true, false);
-                                        for (Personaje personaje : personajesRestantes) {
-                                            System.out.println(personaje.getNombre());
-                                        }
+                                        
                                     }
                                 } else {
                                     personajesRestantes = filtrarPersonajes(personajesRestantes, "Farmacia", true, false);
-                                    for (Personaje personaje : personajesRestantes) {
-                                        System.out.println(personaje.getNombre());
-                                    }
+                                    
                                 }
                             } else {
                                 personajesRestantes = filtrarPersonajes(personajesRestantes, "Comida", true, false);
-                                for (Personaje personaje : personajesRestantes) {
-                                    System.out.println(personaje.getNombre());
-                                }
+                                
                             }
                         } else {
                             personajesRestantes = filtrarPersonajes(personajesRestantes, "Play Station", true, false);
-                            for (Personaje personaje : personajesRestantes) {
-                                System.out.println(personaje.getNombre());
-                            }
+                            
                         }
                     } else {
                         personajesRestantes = filtrarPersonajes(personajesRestantes, "Nintendo", true, false);
-                        for (Personaje personaje : personajesRestantes) {
-                            System.out.println(personaje.getNombre());
-                        }
+                        
                     }
         }
         
