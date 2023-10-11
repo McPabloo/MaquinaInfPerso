@@ -1,4 +1,4 @@
- personajes.add(new Personaje("Kratos", "Masculino", "Ficticio", "Videojuegos", null, "Play Station", null, null));
+        personajes.add(new Personaje("Kratos", "Masculino", "Ficticio", "Videojuegos", null, "Play Station", null, null));
         personajes.add(new Personaje("El Penitente", "Masculino", "Ficticio", "Videojuegos", null, "Play Station", null, null));
         personajes.add(new Personaje("Calamardo", "Masculino", "Ficticio", "Series y Peliculas", null, null, null, "Caricaturas"));
         personajes.add(new Personaje("Lucifugio", "Masculino", "Ficticio", "Mitología", null, null, null, null));
@@ -52,3 +52,6 @@
 
 
         TIPO DE ENTRETENIMIENTO Y TIPO DE ARTISTA
+
+        Pintor Cantante Comediante Productor
+        Caricaturas Superhéroe Anime Luchador Animación

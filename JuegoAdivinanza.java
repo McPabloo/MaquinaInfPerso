@@ -134,6 +134,35 @@ public class JuegoAdivinanza {
                         for (Personaje personaje : personajesRestantes) {
                             System.out.println(personaje.getNombre());
                         }
+                        if (!realizarPregunta("¿Tu personaje es de Cantante?")) {
+                            if (!realizarPregunta("¿Tu personaje es Comediante?")) {
+                                if (!realizarPregunta("¿Tu personaje es Pintor?")) {
+                                    if (!realizarPregunta("¿Tu personaje es Productor/Youtuber?")) {
+                                        System.out.println("No puedo adivinar:(");
+                                    } else {
+                                        personajesRestantes = filtrarPersonajes(personajesRestantes, "Productor", true, false);
+                                        for (Personaje personaje : personajesRestantes) {
+                                            System.out.println(personaje.getNombre());
+                                        }
+                                    }
+                                } else {
+                                    personajesRestantes = filtrarPersonajes(personajesRestantes, "Pintor", true, false);
+                                    for (Personaje personaje : personajesRestantes) {
+                                        System.out.println(personaje.getNombre());
+                                    }
+                                }
+                            } else {
+                                personajesRestantes = filtrarPersonajes(personajesRestantes, "Comediante", true, false);
+                                for (Personaje personaje : personajesRestantes) {
+                                    System.out.println(personaje.getNombre());
+                                }
+                            }
+                        } else {
+                            personajesRestantes = filtrarPersonajes(personajesRestantes, "Cantante", true, false);
+                            for (Personaje personaje : personajesRestantes) {
+                                System.out.println(personaje.getNombre());
+                            }
+                        }
                     }
                 } else {
                     personajesRestantes = filtrarPersonajes(personajesRestantes, "Deportes", true, false);
@@ -160,6 +189,42 @@ public class JuegoAdivinanza {
                 personajesRestantes = filtrarPersonajes(personajesRestantes, "Series y Peliculas", true, false);
                 for (Personaje personaje : personajesRestantes) {
                     System.out.println(personaje.getNombre());
+                }
+                if (!realizarPregunta("¿Tu personaje es de Anime?")) {
+                    if (!realizarPregunta("¿Tu personaje es de Animación?")) {
+                        if (!realizarPregunta("¿Tu personaje es de Caricaturas?")) {
+                            if (!realizarPregunta("¿Tu personaje es Luchador?")) {
+                                if (!realizarPregunta("¿Tu personaje es un Superhéroe?")) {
+                                    System.out.println("No puedo adivinar:(");
+                                } else {
+                                    personajesRestantes = filtrarPersonajes(personajesRestantes, "Superhéroe", true, false);
+                                    for (Personaje personaje : personajesRestantes) {
+                                        System.out.println(personaje.getNombre());
+                                    }
+                                }
+                            } else {
+                                personajesRestantes = filtrarPersonajes(personajesRestantes, "Luchador", true, false);
+                                for (Personaje personaje : personajesRestantes) {
+                                    System.out.println(personaje.getNombre());
+                                }
+                            }
+                        } else {
+                            personajesRestantes = filtrarPersonajes(personajesRestantes, "Caricaturas", true, false);
+                            for (Personaje personaje : personajesRestantes) {
+                                System.out.println(personaje.getNombre());
+                            }
+                        }
+                    } else {
+                        personajesRestantes = filtrarPersonajes(personajesRestantes, "Animación", true, false);
+                        for (Personaje personaje : personajesRestantes) {
+                            System.out.println(personaje.getNombre());
+                        }
+                    }
+                } else {
+                    personajesRestantes = filtrarPersonajes(personajesRestantes, "Anime", true, false);
+                    for (Personaje personaje : personajesRestantes) {
+                        System.out.println(personaje.getNombre());
+                    }
                 }
             }
         } else if (!personajesRestantes.isEmpty()) {
@@ -209,15 +274,15 @@ public class JuegoAdivinanza {
                     }
         }
         
-        /* 
+        
         if (personajesRestantes.isEmpty()) {
             System.out.println("No puedo adivinar tu personaje. ¡Has ganado!");
         } else if (personajesRestantes.size() == 1) {
             Personaje personajeAdivinado = personajesRestantes.get(new Random().nextInt(personajesRestantes.size()));
             System.out.println("¡Adiviné! Tu personaje es:");
-            System.out.println(personajeAdivinado);
+            System.out.println(personajeAdivinado.getNombre());
         } 
-        */
+        
         
         
 
@@ -348,6 +413,61 @@ public class JuegoAdivinanza {
                     personajesFiltrados.add(personaje);
                 } 
             }
+
+            if (atributo.equals("Comediante")) {
+                if (valor && personaje.getTipoArtista().equalsIgnoreCase("Comediante")) {
+                    personajesFiltrados.add(personaje);
+                } 
+            }
+
+            if (atributo.equals("Cantante")) {
+                if (valor && personaje.getTipoArtista().equalsIgnoreCase("Cantante")) {
+                    personajesFiltrados.add(personaje);
+                } 
+            }
+
+            if (atributo.equals("Pintor")) {
+                if (valor && personaje.getTipoArtista().equalsIgnoreCase("Pintor")) {
+                    personajesFiltrados.add(personaje);
+                } 
+            }
+
+            if (atributo.equals("Productor")) {
+                if (valor && personaje.getTipoArtista().equalsIgnoreCase("Productor")) {
+                    personajesFiltrados.add(personaje);
+                } 
+            }
+
+            if (atributo.equals("Caricaturas")) {
+                if (valor && personaje.getTipoEntretenimiento().equalsIgnoreCase("Caricaturas")) {
+                    personajesFiltrados.add(personaje);
+                } 
+            }
+
+            if (atributo.equals("Anime")) {
+                if (valor && personaje.getTipoEntretenimiento().equalsIgnoreCase("Anime")) {
+                    personajesFiltrados.add(personaje);
+                } 
+            }
+
+            if (atributo.equals("Animación")) {
+                if (valor && personaje.getTipoEntretenimiento().equalsIgnoreCase("Animación")) {
+                    personajesFiltrados.add(personaje);
+                } 
+            }
+
+            if (atributo.equals("Luchador")) {
+                if (valor && personaje.getTipoEntretenimiento().equalsIgnoreCase("Luchador")) {
+                    personajesFiltrados.add(personaje);
+                } 
+            }
+
+            if (atributo.equals("Superhéroe")) {
+                if (valor && personaje.getTipoEntretenimiento().equalsIgnoreCase("Superhéroe")) {
+                    personajesFiltrados.add(personaje);
+                } 
+            }
+
             
         }
     
