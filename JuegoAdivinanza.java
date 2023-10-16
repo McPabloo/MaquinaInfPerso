@@ -20,8 +20,8 @@ public class JuegoAdivinanza {
         personajes.add(new Personaje("Wanda", "Femenino", "Ficticio", "Series y Peliculas", null, null, null, "Superhéroes"));
         personajes.add(new Personaje("Leon S. Kennedy", "Masculino", "Ficticio", "Videojuegos", null, "Play Station", null, null));
         personajes.add(new Personaje("Gohan", "Masculino", "Ficticio", "Series y Peliculas", null, null, null, "Anime"));
-        personajes.add(new Personaje("Karely Ruiz", "Femenino", "Real", "Artista", null, null, "Cantante", null));
-        personajes.add(new Personaje("Dr. Simmi", "Masculino", "Real", "Marca", null, "Farmacia", null, null));
+        personajes.add(new Personaje("Karely Ruiz", "Femenino", "Real", "Artista", null, null, "Productor", null));
+        personajes.add(new Personaje("Dr. Simmi", "Masculino", "Ficticio", "Marca", null, "Farmacia", null, null));
         personajes.add(new Personaje("El Tigre Toño", "Masculino", "Ficticio", "Marca", null, "Comida", null, null));
         personajes.add(new Personaje("Triple H", "Masculino", "Real", "Series y Peliculas", null, null, null, "Luchador"));
         personajes.add(new Personaje("Miguel Coco", "Masculino", "Ficticio", "Series y Peliculas", null, null, null, "Animación"));
@@ -77,7 +77,7 @@ public class JuegoAdivinanza {
         List<Personaje> personajesRestantes = new ArrayList<>(personajes);
     
         // Primera pregunta
-        if (!realizarPregunta("¿Tu personaje es masculino?")) {
+        if (!realizarPregunta("¿Tu personaje es masculino? (Aunque sea una botarga, o un personaje ficticio tiene un género pa)")) {
             personajesRestantes = filtrarPersonajes(personajesRestantes, "Masculino", false, false);
             
         } else {
@@ -95,13 +95,13 @@ public class JuegoAdivinanza {
         }
     
         // Tercera pregunta
-        if (!personajesRestantes.isEmpty() && !realizarPregunta("¿Tu personaje es de videojuegos?")) {
-            if (!realizarPregunta("¿Tu personaje es de series o películas?")) {
-                if (!realizarPregunta("¿Tu personaje es de deportes?")) {
+        if (!personajesRestantes.isEmpty() && !realizarPregunta("¿Tu personaje es de videojuegos? (No incluye mugens ni proyectos de código abierto, y ten en cuenta que los personajes históricos, o que aprecen en filmes no entran en esta actegoríasi)")) {
+            if (!realizarPregunta("¿Tu personaje aperece mayormente en series o películas?")) {
+                if (!realizarPregunta("¿Tu personaje es deportista profesional?")) {
                     if (!realizarPregunta("¿Tu personaje es un artista?")) {
                             if (!realizarPregunta("¿Tu personaje es la imagen de una marca?")) {
-                                if (!realizarPregunta("¿Tu personaje es Histórico?")) {
-                                    if (!realizarPregunta("¿Tu personaje es Mitológico?")) {
+                                if (!realizarPregunta("¿Tu personaje es un personaje histórico?")) {
+                                    if (!realizarPregunta("¿Tu personaje es un personaje mitológico?")) {
                                         System.out.println("No me lo sé jaja");
                                     } else {
                                         personajesRestantes = filtrarPersonajes(personajesRestantes, "Mitología", true, false);
@@ -118,7 +118,7 @@ public class JuegoAdivinanza {
                     } else {
                         personajesRestantes = filtrarPersonajes(personajesRestantes, "Artista", true, false);
                         
-                        if (!realizarPregunta("¿Tu personaje es de Cantante?")) {
+                        if (!realizarPregunta("¿Tu personaje es Cantante?")) {
                             if (!realizarPregunta("¿Tu personaje es Comediante?")) {
                                 if (!realizarPregunta("¿Tu personaje es Pintor?")) {
                                     if (!realizarPregunta("¿Tu personaje es Productor/Youtuber?")) {
@@ -143,8 +143,8 @@ public class JuegoAdivinanza {
                 } else {
                     personajesRestantes = filtrarPersonajes(personajesRestantes, "Deportes", true, false);
                     
-                    if (!realizarPregunta("¿Tu personaje juega Futbol?")) {
-                        if (!realizarPregunta("¿Tu personaje corre carreras?")) {
+                    if (!realizarPregunta("¿Tu personaje juega Futbol profesional?")) {
+                        if (!realizarPregunta("¿Tu personaje corre carreras de forma profesional?")) {
                             System.out.println("No puedo adivinar:(");
                         } else {
                             personajesRestantes = filtrarPersonajes(personajesRestantes, "Carreras", true, false);
@@ -192,9 +192,9 @@ public class JuegoAdivinanza {
                          //En caso de responder "no", pregunta otra cosa
                         if (!realizarPregunta("¿Tu personaje es de la Marca Play Station?")) {
                              //En caso de responder "no", pregunta otra cosa
-                            if (!realizarPregunta("¿Tu personaje es de Comida?")) {
+                            if (!realizarPregunta("¿Tu personaje es la imagen de una marca de comida?")) {
                                  //En caso de responder "no", pregunta otra cosa
-                                if (!realizarPregunta("¿Tu personaje es de un Farmacia?")) {
+                                if (!realizarPregunta("¿Tu personaje es la imagen de una Farmacia?")) {
                                      //En caso de responder "no", pregunta otra cosa
                                     if (!realizarPregunta("¿Tu personaje es de la Marca Sega?")) {
                                         System.out.println("No puedo adivinar:(");
