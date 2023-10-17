@@ -48,7 +48,7 @@ public class JuegoAdivinanza {
         personajes.add(new Personaje("Naruto", "Masculino", "Ficticio", "Series y Peliculas", null, null, null, "Anime"));
         personajes.add(new Personaje("Cosmo", "Masculino", "Ficticio", "Series y Peliculas", null, null, null, "Caricaturas"));
         personajes.add(new Personaje("Bambi", "Masculino", "Ficticio", "Series y Peliculas", null, null, null, "Animación"));
-        personajes.add(new Personaje("Lucy", "Femenino", "Ficticio", "Series y Peliculas", null, null, null, "Caricaturas"));
+        personajes.add(new Personaje("Lucy", "Femenino", "Ficticio", "Series y Peliculas", null, null, null, "Anime"));
         personajes.add(new Personaje("Dinosaurio de Google", "Masculino", "Ficticio", "Videojuegos", null, "Google", null, null));
         personajes.add(new Personaje("Cheems", "Masculino", "Real", "Artista", null, null, "Meme", null));
         personajes.add(new Personaje("Franco Escamilla", "Masculino", "Real", "Artista", null, null, "Comediante", null));
